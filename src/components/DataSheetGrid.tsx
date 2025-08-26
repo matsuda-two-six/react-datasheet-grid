@@ -977,6 +977,17 @@ export const DataSheetGrid = React.memo(
             (!(event.shiftKey && activeCell) || rightClick) &&
             data.length > 0
           ) {
+            if (cursorIndex?.col != null && cursorIndex?.row != null) {
+              // focus selected input element
+              const idStr = `_${cursorIndex.row}-${cursorIndex.col + 1} > input`;
+              const el = document.querySelector<HTMLInputElement>(`#${idStr}`);
+              console.log(el);
+              if (el) {
+                el.focus();
+              } else {
+                // console.log("no input element.");
+              }              
+            }
             setActiveCell(
               cursorIndex && {
                 col:

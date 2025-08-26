@@ -10,6 +10,8 @@ export const Cell: FC<{
   children?: any
   width: number
   left: number
+  rowIndex: number
+  colIndex: number
 }> = ({
   children,
   gutter,
@@ -19,6 +21,8 @@ export const Cell: FC<{
   className,
   width,
   left,
+  rowIndex,
+  colIndex,
 }) => {
   return (
     <div
@@ -34,6 +38,7 @@ export const Cell: FC<{
         width,
         left: stickyRight ? undefined : left,
       }}
+      id={`_${rowIndex}-${colIndex}`}
     >
       {children}
     </div>
