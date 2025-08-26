@@ -72,7 +72,7 @@ const TextComponent = react_1.default.memo(({ active, focus, rowData, setRowData
                 // Make sure to first format the input
                 ref.current.value = asyncRef.current.formatInputOnFocus(asyncRef.current.rowData);
                 ref.current.focus();
-                ref.current.select();
+                // ref.current.select()
             }
             // We immediately reset the escPressed
             asyncRef.current.escPressed = false;

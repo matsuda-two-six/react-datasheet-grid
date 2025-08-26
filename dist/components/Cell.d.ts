@@ -8,5 +8,7 @@ export declare const Cell: FC<{
     children?: any;
     width: number;
     left: number;
+    rowIndex: number;
+    colIndex: number;
 }>;
 //# sourceMappingURL=Cell.d.ts.map

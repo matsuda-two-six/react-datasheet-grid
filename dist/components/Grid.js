@@ -96,7 +96,7 @@ const Grid = ({ data, columns, outerRef, innerRef, columnWidths, hasStickyRightC
             headerRowHeight > 0 && (react_1.default.createElement("div", { className: (0, classnames_1.default)('dsg-row', 'dsg-row-header'), style: {
                     width: fullWidth ? '100%' : colVirtualizer.getTotalSize(),
                     height: headerRowHeight,
-                } }, colVirtualizer.getVirtualItems().map((col) => (react_1.default.createElement(Cell_1.Cell, { key: col.key, gutter: col.index === 0, stickyRight: hasStickyRightColumn && col.index === columns.length - 1, width: col.size, left: col.start, className: (0, classnames_1.default)('dsg-cell-header', selectionColMin !== undefined &&
+                } }, colVirtualizer.getVirtualItems().map((col) => (react_1.default.createElement(Cell_1.Cell, { key: col.key, colIndex: col.index, rowIndex: 0, gutter: col.index === 0, stickyRight: hasStickyRightColumn && col.index === columns.length - 1, width: col.size, left: col.start, className: (0, classnames_1.default)('dsg-cell-header', selectionColMin !== undefined &&
                     selectionColMax !== undefined &&
                     selectionColMin <= col.index - 1 &&
                     selectionColMax >= col.index - 1 &&
@@ -126,7 +126,7 @@ const Grid = ({ data, columns, outerRef, innerRef, columnWidths, hasStickyRightC
                             }));
                     const cellIsActive = (activeCell === null || activeCell === void 0 ? void 0 : activeCell.row) === row.index &&
                         activeCell.col === col.index - 1;
-                    return (react_1.default.createElement(Cell_1.Cell, { key: col.key, gutter: col.index === 0, stickyRight: hasStickyRightColumn && col.index === columns.length - 1, active: col.index === 0 && rowActive, disabled: cellDisabled, className: (0, classnames_1.default)(typeof colCellClassName === 'function'
+                    return (react_1.default.createElement(Cell_1.Cell, { key: col.key, colIndex: col.index, rowIndex: row.index, gutter: col.index === 0, stickyRight: hasStickyRightColumn && col.index === columns.length - 1, active: col.index === 0 && rowActive, disabled: cellDisabled, className: (0, classnames_1.default)(typeof colCellClassName === 'function'
                             ? colCellClassName({
                                 rowData: data[row.index],
                                 rowIndex: row.index,

@@ -692,6 +692,18 @@ exports.DataSheetGrid = react_1.default.memo(react_1.default.forwardRef(({ value
         }
         if ((!(event.shiftKey && activeCell) || rightClick) &&
             data.length > 0) {
+            if ((cursorIndex === null || cursorIndex === void 0 ? void 0 : cursorIndex.col) != null && (cursorIndex === null || cursorIndex === void 0 ? void 0 : cursorIndex.row) != null) {
+                // focus selected input element
+                const idStr = `_${cursorIndex.row}-${cursorIndex.col + 1} > input`;
+                const el = document.querySelector(`#${idStr}`);
+                console.log(el);
+                if (el) {
+                    el.focus();
+                }
+                else {
+                    // console.log("no input element.");
+                }
+            }
             setActiveCell(cursorIndex && {
                 col: (rightClickInSelection || rightClickOnSelectedHeaders) &&
                     activeCell
