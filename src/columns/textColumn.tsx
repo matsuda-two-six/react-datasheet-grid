@@ -93,7 +93,7 @@ const TextComponent = React.memo<
             asyncRef.current.rowData
           )
           ref.current.focus()
-          ref.current.select()
+          // ref.current.select()
         }
 
         // We immediately reset the escPressed
